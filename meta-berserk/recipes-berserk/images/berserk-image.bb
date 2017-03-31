@@ -31,10 +31,9 @@ BS_DEBUG_TOOLS = "ldd strace ltrace"
 
 
 # Questions
-# libnfs
-# rtmpdump
-# shairplay
-# libsquish
+### libnfs
+### shairplay
+### libsquish
 # libbluray
 # jsonschemabuilder-native
 
@@ -50,6 +49,10 @@ DEPENDS = "libusb1 libcec libplist expat yajl gperf-native libxmu \
            libxslt taglib libssh ffmpeg \
            x264 libtheora git-replacement-native \
            rtmpdump \
+           libnfs \
+           shairplay \
+           libsquish \
+           libbluray \
            "
 
 
