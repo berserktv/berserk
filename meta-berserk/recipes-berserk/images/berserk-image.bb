@@ -31,10 +31,6 @@ BS_DEBUG_TOOLS = "ldd strace ltrace"
 
 
 # Questions
-### libnfs
-### shairplay
-### libsquish
-# libbluray
 # jsonschemabuilder-native
 
 
@@ -53,6 +49,7 @@ DEPENDS = "libusb1 libcec libplist expat yajl gperf-native libxmu \
            shairplay \
            libsquish \
            libbluray \
+           jsonschemabuilder-native \
            "
 
 
