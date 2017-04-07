@@ -6,5 +6,7 @@ PV = "15.0+gitr${SRCPV}"
 PR = "r0"
             
 SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Isengard \
+           file://kodi-isengard-rpb-backports.patch \
+           file://network-menu.patch \
           "
 
