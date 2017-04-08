@@ -71,7 +71,7 @@ EXTRA_OECONF = " \
   --disable-tegra \
   --disable-profiling \
   --enable-joystick=no \
-  --enable-libcec \
+  --disable-libcec \
   --enable-udev \
   --disable-libusb \
   --disable-goom \
