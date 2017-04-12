@@ -27,34 +27,6 @@ SPLASH = "psplash-raspberrypi"
 
 BS_DEBUG_TOOLS = "ldd strace ltrace"
 
-# Kodi test depends
-
-
-# Questions
-# jsonschemabuilder-native
-
-
-
-DEPENDS = "libusb1 libcec libplist expat yajl gperf-native libxmu \
-           fribidi mpeg2dec samba fontconfig curl python libass libmodplug \
-           libmicrohttpd wavpack libmms cmake-native \
-           virtual/egl mysql5 sqlite3 libmms faad2 libcdio libpcre boost lzo enca \
-           avahi libsamplerate0 libxinerama libxtst bzip2 \
-           jasper zip-native zlib libtinyxml libmad \
-           swig-native libvorbis tiff \
-           libxslt taglib libssh ffmpeg \
-           x264 libtheora git-replacement-native \
-           rtmpdump \
-           libnfs \
-           shairplay \
-           libsquish \
-           libbluray \
-           jsonschemabuilder-native \
-           "
-
-
-
-
 BS_GLIBC = "glibc-thread-db \
             glibc-gconv-utf-16 \
             glibc-gconv-utf-32 \
@@ -102,17 +74,23 @@ BS_WIFI_SUPPORT = " \
         linux-firmware \
         "
 
+#BS_SOFT = "mc \
+#           xbmc \
+#           xbmc-runner \
+#           xbmc-pvr-iptvsimple \
+#           xbmc-guisettings \
+#           xbmc-language-ru \
+#           tv-config \
+#           berserk-tools-config \
+#           script-berserk-network \
+#           screensaver-kodi-universe \
+#           "
+
 BS_SOFT = "mc \
-           xbmc \
-           xbmc-runner \
-           xbmc-pvr-iptvsimple \
-           xbmc-guisettings \
-           xbmc-language-ru \
-           tv-config \
-           berserk-tools-config \
+           kodi \
            script-berserk-network \
-           screensaver-kodi-universe \
            "
+
 
 
 # Include modules in rootfs
@@ -121,12 +99,6 @@ IMAGE_INSTALL += " \
     ${BS_WLAN} \
     ${BS_WIFI_SUPPORT} \
     ${BS_GLIBC} \
+    ${BS_SOFT} \
     ${BS_DEBUG_TOOLS} \
     "
-
-#    ${BS_SOFT} \    
-#
-
-
-
-    
