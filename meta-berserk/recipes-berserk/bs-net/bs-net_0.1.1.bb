@@ -24,7 +24,7 @@ S = "${WORKDIR}/git"
 PACKAGES = "${PN}"
 FILES_${PN} = "${NET_DIR} ${UDEV_DIR} ${KODI_HOME_DIR}"
 
-RDEPENDS_${PN} += "dhcp ntp"
+RDEPENDS_${PN} += "dhcp ntp wpa-supplicant iw"
 
 do_install_append() {
     install -d ${D}${UDEV_DIR}
