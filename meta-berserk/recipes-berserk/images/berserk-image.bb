@@ -89,7 +89,9 @@ BS_WIFI_SUPPORT = " \
 BS_SOFT = "mc \
            kodi \
            bs-net \
+           kodi-pvr-iptvsimple \
            script-berserk-network \
+           screensaver-kodi-universe \
            "
 
 
