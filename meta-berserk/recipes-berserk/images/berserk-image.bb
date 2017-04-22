@@ -88,6 +88,7 @@ BS_WIFI_SUPPORT = " \
 
 BS_SOFT = "mc \
            kodi \
+           kodi-settings \
            bs-net \
            tv-config \
            kodi-pvr-iptvsimple \
