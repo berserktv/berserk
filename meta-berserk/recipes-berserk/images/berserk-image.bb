@@ -88,11 +88,12 @@ BS_WIFI_SUPPORT = " \
 
 BS_SOFT = "mc \
            kodi \
+           kodi-runner \           
            kodi-settings \
-           bs-net \
-           tv-config \
            kodi-language-ru \
            kodi-pvr-iptvsimple \
+           bs-net \
+           tv-config \
            script-berserk-network \
            screensaver-kodi-universe \
            "

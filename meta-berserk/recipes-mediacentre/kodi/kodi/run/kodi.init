@@ -1,0 +1,53 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          bs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Required-Start:    
+# Required-Stop:     
+# Short-Description: Kodi multimedia center
+### END INIT INFO
+
+# Do NOT "set -e"
+
+# PATH should only include /usr/* if it runs after the mountnfs.sh script
+PATH=/sbin:/usr/sbin:/bin:/usr/bin
+DESC="Kodi runner script"
+NAME=kodi
+KODIROOT=/usr
+DAEMON=$KODIROOT/bin/$NAME
+DAEMON_ARGS="--standalone"
+PIDFILE=/var/run/$NAME/$NAME
+SCRIPTNAME=/etc/init.d/$NAME
+HOME=/home/root
+
+# Exit if the package is not installed
+[ -x "$DAEMON" ] || exit 0
+
+# Read configuration variable file if it is present
+[ -r /etc/default/$NAME ] && . /etc/default/$NAME
+
+
+
+case "$1" in
+  start)
+      # так как Kodi является по сути единственным приложением запускаемым на Raspberry Pi
+      # то перезапуск осуществляется простым скриптом (пока не хочется тащить для этого "systemd" в образ (https://berserk.tv))
+      # :-) ждут котенка "Гава" неприятности -  "а зачем они его ждут"
+      reset
+      echo
+      echo "ver 0.2.1 Torvin"
+      setterm --background black --foreground black --cursor off
+      /etc/init.d/restarter.sh $DAEMON $DAEMON_ARGS > /dev/null 2>&1 &
+      ;;
+  stop)
+      ;;
+  restart|force-reload)
+      ;;
+  *)
+      echo "Usage: $SCRIPTNAME {start|stop|restart|force-reload}" >&2
+      exit 1
+      ;;
+esac
+
+
