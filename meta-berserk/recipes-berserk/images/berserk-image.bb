@@ -94,6 +94,7 @@ BS_SOFT = "mc \
            kodi-pvr-iptvsimple \
            bs-net \
            tv-config \
+           first-run \
            script-berserk-network \
            screensaver-kodi-universe \
            "
