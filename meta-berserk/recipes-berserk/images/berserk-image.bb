@@ -23,7 +23,8 @@ ROOTPASSWORD = "berserk"
 EXTRA_USERS_PARAMS = "usermod -P ${ROOTPASSWORD} ${ROOTUSERNAME};"
 
 
-SPLASH = "psplash-raspberrypi"
+# стартовая заставка, которая выводиться во время загрузки
+SPLASH = "psplash-berserk"
 
 BS_DEBUG_TOOLS = "ldd strace ltrace"
 
