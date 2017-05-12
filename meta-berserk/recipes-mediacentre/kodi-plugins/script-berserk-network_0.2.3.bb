@@ -34,6 +34,7 @@ do_install_append() {
     install -m 0644 ${S}/changelog.txt ${D}/${KODI_ADDON_PATH}
     install -m 0644 ${S}/default.py    ${D}/${KODI_ADDON_PATH}
     install -m 0644 ${S}/icon.png      ${D}/${KODI_ADDON_PATH}
+    install -m 0644 ${S}/service.py    ${D}/${KODI_ADDON_PATH}
 
     cp -vfR ${S}/resources ${D}/${KODI_ADDON_PATH}
 }
