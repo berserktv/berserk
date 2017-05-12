@@ -7,11 +7,20 @@ PR = "r1"
 LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
+GIT_REPO_DIR = "github.com/berserktv"
 KODI_HOME_DIR = "/home/root/.kodi"
 KODI_ADDON_NAME = "screensaver.kodi.universe"
+KODI_ADDON_PATH = "${KODI_HOME_DIR}/addons/${KODI_ADDON_NAME}"
+KODI_MEDIA_PATH = "${KODI_ADDON_PATH}/resources/skins/default/media/kodi-universe.mkv"
+KODI_ADDON_VIDEO = "https://${GIT_REPO_DIR}/bs-res/raw/master/kodi-plugins/${KODI_ADDON_NAME}/isengard/kodi-universe.mkv"
 
-SRC_URI = "git://github.com/berserktv/${KODI_ADDON_NAME}.git;branch=master"
-SRCREV = "d32bcb5101f179c1b2a1db833936832519468ea1"
+SRC_URI = "${KODI_ADDON_VIDEO};protocol=https;name=kodi-video \
+           git://${GIT_REPO_DIR}/${KODI_ADDON_NAME}.git;branch=master;name=kodi-addon \
+           "
+
+SRCREV_kodi-addon = "d32bcb5101f179c1b2a1db833936832519468ea1"
+SRC_URI[kodi-video.md5sum] = "98f941a6ad29fe7ad4735e8a0eedd4dc"
+SRC_URI[kodi-video.sha256sum] = "45e6a93eee87b8506d351d13214ffbfe005526b6a146a2d0086e88050aa44785"
 
 
 S = "${WORKDIR}/git"
@@ -19,7 +28,8 @@ PACKAGES = "${PN}"
 FILES_${PN} = "${KODI_HOME_DIR}"
 
 do_install_append() {
-    install -d ${D}/${KODI_HOME_DIR}/addons/${KODI_ADDON_NAME}
+    install -d ${D}/${KODI_ADDON_PATH}
     rm -fr ${S}/.git
-    cp -vfR ${S}/* ${D}/${KODI_HOME_DIR}/addons/${KODI_ADDON_NAME}
+    cp -vfR ${S}/* ${D}/${KODI_ADDON_PATH}
+    install -m 0644 ${WORKDIR}/kodi-universe.mkv ${D}/${KODI_MEDIA_PATH}
 }
