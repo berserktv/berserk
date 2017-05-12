@@ -13,7 +13,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d
 
 
 SRC_URI = "git://github.com/berserktv/script.berserk.network.git;branch=master"
-SRCREV = "4454731baf4d0066580152cfb9407673e424f15d"
+SRCREV = "a68597d06254f0923ee567a72399102ca6d7edde"
 
 
 KODI_HOME_DIR = "/home/root/.kodi"
