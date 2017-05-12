@@ -31,6 +31,7 @@ do_install() {
     install -m 0644 ${S}/${LANG_PACKAGE}/icon.png ${D}${KODI_ADDONS}/${LANG_PACKAGE}
     install -m 0644 ${S}/${LANG_PACKAGE}/addon.xml ${D}${KODI_ADDONS}/${LANG_PACKAGE}
     install -m 0755 ${S}/${LANG_PACKAGE}/resources/* ${D}${KODI_ADDONS}/${LANG_PACKAGE}/resources
+    chown root:root -R ${D}
 }
 
 
