@@ -24,7 +24,7 @@ S = "${WORKDIR}/git"
 PACKAGES = "${PN}"
 FILES_${PN} = "${NET_DIR} ${UDEV_DIR} ${KODI_HOME_DIR}"
 
-RDEPENDS_${PN} += "ntp wpa-supplicant iw"
+RDEPENDS_${PN} += "ntp wpa-supplicant iw gawk"
 
 do_install_append() {
     install -d ${D}${UDEV_DIR}
