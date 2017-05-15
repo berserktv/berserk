@@ -111,3 +111,10 @@ IMAGE_INSTALL += " \
     ${BS_SOFT} \
     ${BS_DEBUG_TOOLS} \
     "
+
+ROOTFS_POSTPROCESS_COMMAND += "fix_ntpdate; "
+
+# FIXME: быстрая заплатка (перенести в версию bs-net)
+fix_ntpdate() {
+    sed -i "s|/usr/bin/ntpdate|/usr/sbin/ntpdate|g" ${IMAGE_ROOTFS}/etc/network/dh-func.sh
+}
