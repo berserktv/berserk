@@ -18,6 +18,7 @@ NET_DIR = "/etc/network"
 UDEV_DIR = "/etc/udev/rules.d"
 KODI_HOME_DIR = "/home/root/.kodi"
 ETH_CONFIGS = "${KODI_HOME_DIR}/userdata/eths"
+WLAN_CONFIGS = "${KODI_HOME_DIR}/userdata/wlans"
 
 S = "${WORKDIR}/git"
 
@@ -30,6 +31,7 @@ do_install_append() {
     install -d ${D}${UDEV_DIR}
     install -d ${D}${sysconfdir}/network
     install -d ${D}${ETH_CONFIGS}
+    install -d ${D}${WLAN_CONFIGS}
 
     install -m 0755 ${S}${NET_DIR}/dh-func.sh ${D}${sysconfdir}/network
     install -m 0755 ${S}${NET_DIR}/eth-manual ${D}${sysconfdir}/network 
