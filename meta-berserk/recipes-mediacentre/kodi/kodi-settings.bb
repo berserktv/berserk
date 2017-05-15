@@ -9,11 +9,10 @@ FILESEXTRAPATHS_prepend := "${THISDIR}/kodi:"
                     
 S = "${WORKDIR}"
 
+require kodi-dir.inc
 require recipes-berserk/tv/tv-dir.inc
 
-KODI_HOME_DIR = "/home/root/.kodi"    
-USERDATA = "${KODI_HOME_DIR}/userdata"
-PVR_IPTVSIMPLE_SETTINGS = "${USERDATA}/addon_data/pvr.iptvsimple"
+PVR_IPTVSIMPLE_SETTINGS = "${KODI_USERDATA}/addon_data/pvr.iptvsimple"
 
 
 SRC_URI += " \
@@ -26,7 +25,7 @@ SRC_URI += " \
 
 PACKAGES = "${PN}"
 
-FILES_${PN} +=  "${USERDATA} \
+FILES_${PN} +=  "${KODI_USERDATA} \
                 "
 
 FIND_M3U_PATH = "m3uPath. value=."
@@ -34,9 +33,9 @@ REPLACE_M3U_PATH = "${TV_CONFIG_DIR}/${TV_CONFIG}"
                 
 do_install() {
     # Kodi guisettings
-    install -d "${D}${USERDATA}"
-    install -m 0644 "${S}/settings/guisettings.xml" "${D}${USERDATA}"
-    install -m 0644 "${S}/settings/advancedsettings.xml" "${D}${USERDATA}"
+    install -d "${D}${KODI_USERDATA}"
+    install -m 0644 "${S}/settings/guisettings.xml" "${D}${KODI_USERDATA}"
+    install -m 0644 "${S}/settings/advancedsettings.xml" "${D}${KODI_USERDATA}"
     
     # addon pvr.iptvsimple settings
     install -d "${D}${PVR_IPTVSIMPLE_SETTINGS}"

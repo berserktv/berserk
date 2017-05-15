@@ -4,6 +4,7 @@ ADDONS_NAME = "pvr.iptvsimple"
 LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
+require ../kodi/kodi-dir.inc
 require ../kodi/kodi-version.inc
 
 
@@ -21,8 +22,8 @@ RDEPENDS_${PN} = "userland"
 PACKAGES = "${PN}-dbg ${PN}"
 PROVIDES = "${PACKAGES}"
 
-FILES_${PN} = "/lib /share /home/root/.kodi/addons"
-FILES_${PN}-dbg = "/lib/kodi/addons/pvr.iptvsimple/.debug"
+FILES_${PN} = "/lib /share ${KODI_ADDON_DIR}"
+FILES_${PN}-dbg = "/lib/kodi/addons/${ADDONS_NAME}/.debug"
 
 INSANE_SKIP_${PN} = "dev-so"
 
@@ -33,7 +34,6 @@ PARALLEL_MAKE = ""
 VERSION_BCM2835 = "20160622-r3"
 GIT_DIR_BCM2835 = "bcm2835-bootfiles/${VERSION_BCM2835}/git"
 WORK_DIR_BCM2835 = "${BASE_WORKDIR}/${MACHINE}-${DISTRO}-${TARGET_OS}"
-KODI_HOME_DIR = "/home/root/.kodi"
 
 EXTRA_OECONF = " \
     --with-platform=raspberry-pi \
@@ -78,8 +78,8 @@ do_configure() {
 
 
 do_compile_append() {
-    install -d ${D}/${KODI_HOME_DIR}/addons
-    cp -vfR ${D}/pvr.iptvsimple ${D}/${KODI_HOME_DIR}/addons
+    install -d ${D}/${KODI_ADDON_DIR}
+    cp -vfR ${D}/pvr.iptvsimple ${D}/${KODI_ADDON_DIR}
     rm -fr ${D}/pvr.iptvsimple
 }
 

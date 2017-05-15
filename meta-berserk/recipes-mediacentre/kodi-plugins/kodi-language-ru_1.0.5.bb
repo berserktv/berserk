@@ -10,8 +10,7 @@ PR = "r0"
 LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
-KODI_HOME_DIR = "/home/root/.kodi"
-KODI_ADDONS = "${KODI_HOME_DIR}/addons"
+require ../kodi/kodi-dir.inc
 LANG_PACKAGE = "resource.language.ru_ru"
 
 SRC_URI = "file://${LANG_PACKAGE}.tar.gz"
@@ -20,17 +19,17 @@ S = "${WORKDIR}"
 
 PACKAGES = "${PN}"
 
-FILES_${PN} +=  "${KODI_ADDONS}"
+FILES_${PN} +=  "${KODI_ADDON_DIR}"
 
 
 do_install() {
     # Kodi addons
-    install -d "${D}${KODI_ADDONS}/${LANG_PACKAGE}"
-    install -d "${D}${KODI_ADDONS}/${LANG_PACKAGE}/resources"
+    install -d "${D}${KODI_ADDON_DIR}/${LANG_PACKAGE}"
+    install -d "${D}${KODI_ADDON_DIR}/${LANG_PACKAGE}/resources"
 
-    install -m 0644 ${S}/${LANG_PACKAGE}/icon.png ${D}${KODI_ADDONS}/${LANG_PACKAGE}
-    install -m 0644 ${S}/${LANG_PACKAGE}/addon.xml ${D}${KODI_ADDONS}/${LANG_PACKAGE}
-    install -m 0755 ${S}/${LANG_PACKAGE}/resources/* ${D}${KODI_ADDONS}/${LANG_PACKAGE}/resources
+    install -m 0644 ${S}/${LANG_PACKAGE}/icon.png ${D}${KODI_ADDON_DIR}/${LANG_PACKAGE}
+    install -m 0644 ${S}/${LANG_PACKAGE}/addon.xml ${D}${KODI_ADDON_DIR}/${LANG_PACKAGE}
+    install -m 0755 ${S}/${LANG_PACKAGE}/resources/* ${D}${KODI_ADDON_DIR}/${LANG_PACKAGE}/resources
     chown root:root -R ${D}
 }
 

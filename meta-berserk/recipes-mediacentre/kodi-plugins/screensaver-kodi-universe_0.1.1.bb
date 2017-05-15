@@ -8,9 +8,10 @@ LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
 GIT_REPO_DIR = "github.com/berserktv"
-KODI_HOME_DIR = "/home/root/.kodi"
+
+require ../kodi/kodi-dir.inc
 KODI_ADDON_NAME = "screensaver.kodi.universe"
-KODI_ADDON_PATH = "${KODI_HOME_DIR}/addons/${KODI_ADDON_NAME}"
+KODI_ADDON_PATH = "${KODI_ADDON_DIR}/${KODI_ADDON_NAME}"
 KODI_MEDIA_PATH = "${KODI_ADDON_PATH}/resources/skins/default/media/kodi-universe.mkv"
 KODI_ADDON_VIDEO = "https://${GIT_REPO_DIR}/bs-res/raw/master/kodi-plugins/${KODI_ADDON_NAME}/isengard/kodi-universe.mkv"
 

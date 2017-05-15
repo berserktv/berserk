@@ -14,11 +14,12 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d
 SRC_URI = "git://github.com/berserktv/bs-net.git;branch=master"
 SRCREV = "f1598f827416071f2651034cf2b1a22b1befc378"
 
+require recipes-mediacentre/kodi/kodi-dir.inc
+
 NET_DIR = "/etc/network"
 UDEV_DIR = "/etc/udev/rules.d"
-KODI_HOME_DIR = "/home/root/.kodi"
-ETH_CONFIGS = "${KODI_HOME_DIR}/userdata/eths"
-WLAN_CONFIGS = "${KODI_HOME_DIR}/userdata/wlans"
+ETH_CONFIGS = "${KODI_USERDATA}/eths"
+WLAN_CONFIGS = "${KODI_USERDATA}/wlans"
 
 S = "${WORKDIR}/git"
 
