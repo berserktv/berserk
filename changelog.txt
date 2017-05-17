@@ -1,0 +1,11 @@
+v0.2.1 - 17/05/2017
+- Linux Kernel 4.1.21
+- Kodi 15.2
+- bcm2835-bootfiles 20160622-r3
+- Network Manager v0.2.3
+- Screensaver v0.1.1
+- Dosfstools 3.0.28
+- FFmpeg 2.6
+Build
+  - Poky 2.1.3 (Krogoth)
+  - version 0.2.x - codename "Torvin"
