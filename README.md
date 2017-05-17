@@ -1,5 +1,6 @@
-Berserk
+# Berserk
 
-Build a Kodi for Raspberry Pi Media Center
+## Building Kodi Media Center for Raspberry Pi in the Yocto Project
 
-Manual https://berserk.tv/berserk.html
+***
+Manual https://berserk.tv/kodi.html
