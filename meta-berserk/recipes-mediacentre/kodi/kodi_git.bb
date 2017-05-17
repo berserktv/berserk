@@ -103,7 +103,7 @@ EXTRA_OECONF = " \
   --enable-libbluray \
   --disable-texturepacker \
   --with-ffmpeg=shared \
-  --with-platform=raspberry-pi \
+  --with-platform=raspberry-pi2 \
   --enable-player=omxplayer \
 "
 
