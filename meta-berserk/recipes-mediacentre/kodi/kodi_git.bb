@@ -62,9 +62,6 @@ EXTRA_OECONF = " \
   ac_cv_lib_bluetooth_hci_devid=no \
   --disable-debug \
   --disable-optimizations \
-  --disable-gl \
-  --enable-gles \
-  --enable-openmax \
   --disable-vdpau \
   --disable-vaapi \
   --disable-vtbdecoder \
@@ -103,12 +100,18 @@ EXTRA_OECONF = " \
   --enable-libbluray \
   --disable-texturepacker \
   --with-ffmpeg=shared \
-  --with-platform=raspberry-pi2 \
-  --enable-player=omxplayer \
+  ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', '--enable-gl', '--enable-gles', d)} \
 "
 
 # так же убрал --enable-texturepacker
 #
+
+# специфическии опции для плат Raspberry Pi
+# реализация OPENGL обязательно должна быть --enable-gles см. строку выше bb.utils.contains(DISTRO_FEATURES
+#
+EXTRA_OECONF_append_raspberrypi  = " --disable-gl --enable-openmax --enable-player=omxplayer --with-platform=raspberry-pi"
+# конфигурация для плат RPI2 и RPI3
+EXTRA_OECONF_append_raspberrypi2 = " --disable-gl --enable-openmax --enable-player=omxplayer --with-platform=raspberry-pi2"
 
 
 FULL_OPTIMIZATION_armv7a = "-fexpensive-optimizations -fomit-frame-pointer -O4 -ffast-math"
