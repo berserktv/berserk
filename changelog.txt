@@ -1,3 +1,8 @@
+v0.2.2 - 23/06/2017
+- Separation of the assembly 
+  in Kodi recipe, for boards:
+  Raspberry Pi and Raspberry Pi 2,3
+
 v0.2.1 - 17/05/2017
 - Linux Kernel 4.1.21
 - Kodi 15.2
