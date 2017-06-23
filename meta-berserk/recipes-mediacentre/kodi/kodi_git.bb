@@ -11,11 +11,12 @@ RCONFLICTS_${PN} = "mesa"
 require kodi-version.inc
 
 
-DEPENDS = "libusb1 libcec libplist expat yajl gperf-native libxmu \
+DEPENDS = "libusb1 libcec libplist expat yajl gperf-native \
            fribidi mpeg2dec samba fontconfig curl python libass libmodplug \
            libmicrohttpd wavpack libmms cmake-native \
            virtual/egl mysql5 sqlite3 libmms faad2 libcdio libpcre boost lzo enca \
-           avahi libsamplerate0 libxinerama libxtst bzip2 \
+           avahi libsamplerate0 bzip2 \
+           libxmu libxinerama libxtst xdpyinfo \
            jasper zip-native zlib libtinyxml libmad \
            libbluray libnfs swig-native libvorbis tiff \
            libxslt taglib libssh rtmpdump shairplay ffmpeg \
@@ -23,9 +24,6 @@ DEPENDS = "libusb1 libcec libplist expat yajl gperf-native libxmu \
            jsonschemabuilder-native \
            "
 
-# убрал зависимости
-# virtual/libsdl \
-# libsdl-image libsdl-mixer
 
 
 RDEPENDS_${PN} += "python-json"
@@ -42,18 +40,12 @@ CACHED_CONFIGUREVARS += " \
     ac_cv_path_PYTHON="${STAGING_BINDIR_NATIVE}/python-native/python" \
 "
 
-# предусматриваю параметр "openglesv2" в layer.conf
-PACKAGECONFIG ??= "${@base_contains('DISTRO_FEATURES', 'openglesv2', 'openglesv2', '', d)} "
+PACKAGECONFIG ??= "${@base_contains('DISTRO_FEATURES', 'opengl', 'opengl', 'openglesv2', d)}"
+PACKAGECONFIG[opengl] = "--enable-gl,--disable-gl,glew"
 PACKAGECONFIG[openglesv2] = "--enable-gles,,userland"
+### example used bb.utils.contains
+### EXTRA_OECONF += ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', '--enable-gl', '--enable-gles', d)} 
 
-
-#PACKAGECONFIG ??= "${@base_contains('DISTRO_FEATURES', 'opengl', 'opengl', 'openglesv2', d)}"
-#PACKAGECONFIG[opengl] = "--enable-gl,--enable-gles,glew"
-#PACKAGECONFIG[openglesv2] = "--enable-gles,,"
-
-# FIXME: 
-#   убрать явное указание --disable-gl и --disable-gl, проверить что бы зависили
-#   от DISTRO_FEATURES => "openglesv2"
 
 EXTRA_OECONF = " \
   --disable-static \
@@ -77,7 +69,6 @@ EXTRA_OECONF = " \
   --disable-waveform \
   --disable-spectrum \
   --disable-fishbmc \
-  --disable-x11 \
   --disable-ccache \
   --enable-alsa \
   --disable-pulse \
@@ -100,24 +91,20 @@ EXTRA_OECONF = " \
   --enable-libbluray \
   --disable-texturepacker \
   --with-ffmpeg=shared \
-  ${@bb.utils.contains('DISTRO_FEATURES', 'opengl', '--enable-gl', '--enable-gles', d)} \
 "
 
-# так же убрал --enable-texturepacker
-#
-
 # специфическии опции для плат Raspberry Pi
-# реализация OPENGL обязательно должна быть --enable-gles см. строку выше bb.utils.contains(DISTRO_FEATURES
-#
-EXTRA_OECONF_append_raspberrypi  = " --disable-gl --enable-openmax --enable-player=omxplayer --with-platform=raspberry-pi"
+# реализация OPENGL обязательно должна быть --enable-gles см. строку выше bb.utils.contains(DISTRO_FEATURES)
+# для kodi зависимости сборки указаны в docs/README.linux => libxmu libxinerama libxtst xdpyinfo
+# для сборки этих библиотек в DISTRO_FEATURES необходима зависимость "x11"
+# но сам kodi для RPI1 и RPI2,3 собирается с опцией --disable-x11
+EXTRA_OECONF_append_raspberrypi  = " --disable-gl --enable-openmax --enable-player=omxplayer --with-platform=raspberry-pi --disable-x11"
 # конфигурация для плат RPI2 и RPI3
-EXTRA_OECONF_append_raspberrypi2 = " --disable-gl --enable-openmax --enable-player=omxplayer --with-platform=raspberry-pi2"
+EXTRA_OECONF_append_raspberrypi2 = " --disable-gl --enable-openmax --enable-player=omxplayer --with-platform=raspberry-pi2 --disable-x11"
 
 
 FULL_OPTIMIZATION_armv7a = "-fexpensive-optimizations -fomit-frame-pointer -O4 -ffast-math"
 BUILD_OPTIMIZATION = "${FULL_OPTIMIZATION}"
-
-###EXTRA_OECONF_append_armv7a = " --cpu=cortex-a8 "
 
 # for python modules
 export HOST_SYS
@@ -143,11 +130,6 @@ do_compile_prepend() {
 }
 
 INSANE_SKIP_${PN} = "rpaths"
-
-# on ARM architectures xbmc will use GLES which will make the regular wrapper fail, so start it directly
-###do_install_append_arm() {
-###    sed -i -e 's:Exec=xbmc:Exec=${libdir}/xbmc/xbmc.bin:g' ${D}${datadir}/applications/xbmc.desktop
-###}
 
 do_install_append() {
     # исправляю путь в cmake файле ${STAGING_DIR_TARGET}/usr/lib/kodi/kodi-config.cmake
