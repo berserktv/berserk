@@ -12,7 +12,7 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d
 
 
 SRC_URI = "git://github.com/berserktv/bs-net.git;branch=master"
-SRCREV = "f1598f827416071f2651034cf2b1a22b1befc378"
+SRCREV = "5294dd221dcf6e20582ddfa699d009af6d6c3f4f"
 
 require recipes-mediacentre/kodi/kodi-dir.inc
 
