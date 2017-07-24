@@ -19,7 +19,7 @@ SRC_URI = "${KODI_ADDON_VIDEO};protocol=https;name=kodi-video \
            git://${GIT_REPO_DIR}/${KODI_ADDON_NAME}.git;branch=master;name=kodi-addon \
            "
 
-SRCREV_kodi-addon = "d32bcb5101f179c1b2a1db833936832519468ea1"
+SRCREV_kodi-addon = "a15fd087f9d1bb67388815d18fde1c1a59919290"
 SRC_URI[kodi-video.md5sum] = "98f941a6ad29fe7ad4735e8a0eedd4dc"
 SRC_URI[kodi-video.sha256sum] = "45e6a93eee87b8506d351d13214ffbfe005526b6a146a2d0086e88050aa44785"
 
