@@ -12,7 +12,7 @@ IMAGE_FEATURES += "ssh-server-dropbear splash"
 IMAGE_ROOTFS_EXTRA_SPACE_append += "+ 100000"
 
 
-# BS - BerSerk, version 0.2.1 - "Torvin"
+# BS - BerSerk, version 0.2.3 - "Torvin"
 # Base this image on core-image-minimal
 include recipes-core/images/core-image-minimal.bb
 
