@@ -44,6 +44,7 @@ RDEPENDS_${PN} += "python-ctypes \
                    python-threading \
                    python-math \
                    python-email \
+                   python-misc \
                    "
 
 inherit autotools-brokensep gettext python-dir
