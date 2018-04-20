@@ -12,7 +12,7 @@ IMAGE_FEATURES += "ssh-server-dropbear splash"
 IMAGE_ROOTFS_EXTRA_SPACE_append += "+ 100000"
 
 
-# BS - BerSerk, version 0.2.3 - "Torvin"
+# BS - BerSerk, version 0.2.4 - "Torvin"
 # Base this image on core-image-minimal
 include recipes-core/images/core-image-minimal.bb
 
@@ -51,6 +51,8 @@ BS_BASE = "kernel-modules \
            ntp \
            ntpdate \
            e2fsprogs-resize2fs \
+           ntfs-3g \
+           ntfsprogs \
            "
 
 BS_WLAN = "kernel-module-rt2800usb \
@@ -111,10 +113,3 @@ IMAGE_INSTALL += " \
     ${BS_SOFT} \
     ${BS_DEBUG_TOOLS} \
     "
-
-ROOTFS_POSTPROCESS_COMMAND += "fix_ntpdate; "
-
-# FIXME: быстрая заплатка (перенести в версию bs-net)
-fix_ntpdate() {
-    sed -i "s|/usr/bin/ntpdate|/usr/sbin/ntpdate|g" ${IMAGE_ROOTFS}/etc/network/dh-func.sh
-}
