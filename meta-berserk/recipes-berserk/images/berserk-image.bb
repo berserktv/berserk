@@ -77,18 +77,6 @@ BS_WIFI_SUPPORT = " \
         linux-firmware \
         "
 
-#BS_SOFT = "mc \
-#           xbmc \
-#           xbmc-runner \
-#           xbmc-pvr-iptvsimple \
-#           xbmc-guisettings \
-#           xbmc-language-ru \
-#           tv-config \
-#           berserk-tools-config \
-#           script-berserk-network \
-#           screensaver-kodi-universe \
-#           "
-
 BS_SOFT = "mc \
            kodi \
            kodi-runner \           
@@ -100,6 +88,8 @@ BS_SOFT = "mc \
            first-run \
            script-berserk-network \
            screensaver-kodi-universe \
+           plugin-video-youtube \
+           script-module-requests \
            "
 
 
