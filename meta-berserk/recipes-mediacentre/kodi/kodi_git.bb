@@ -25,8 +25,26 @@ DEPENDS = "libusb1 libcec libplist expat yajl gperf-native \
            "
 
 
-
-RDEPENDS_${PN} += "python-json"
+RDEPENDS_${PN} += "python-ctypes \
+                   python-lang \
+                   python-re \
+                   python-io \
+                   python-netserver \
+                   python-netclient \
+                   python-html \
+                   python-difflib \
+                   python-json \
+                   python-zlib \
+                   python-shell \
+                   python-sqlite3 \
+                   python-urllib3 \
+                   python-compression \
+                   python-datetime \
+                   python-crypt \
+                   python-threading \
+                   python-math \
+                   python-email \
+                   "
 
 inherit autotools-brokensep gettext python-dir
 
