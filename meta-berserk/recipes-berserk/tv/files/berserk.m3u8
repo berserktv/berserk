@@ -1,10 +1,6 @@
 #EXTM3U
 #EXTINF:0 group-title="Новости",ABC News English
 http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200
-#EXTINF:0 audio-track="ru" group-title="Новости",EuroNews Russian
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/ru_vidan750_rtp.sdp
-#EXTINF:0 group-title="NASA ISS HD Earth Viewing",NASA ISS HD Earth Viewing
-http://iphone-streaming.ustream.tv/uhls/17074538/streams/live/iphone/playlist.m3u8
 #EXTINF:0 group-title="Новости",France 24 English
 http://static.france24.com/live/F24_EN_LO_HLS/live_ios.m3u8
 #EXTINF:0 group-title="Новости",Deutsche Welle German
@@ -13,22 +9,6 @@ http://www.metafilegenerator.de/DWelle/tv/ios/master.m3u8
 http://tagesschau-lh.akamaihd.net/i/tagesschau_1@119231/master.m3u8
 #EXTINF:0 group-title="Новости",France 24 French
 http://static.france24.com/live/F24_FR_LO_HLS/live_ios.m3u8
-#EXTINF:0 group-title="Новости",EuroNews Arabic
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/ar_vidan750_rtp.sdp
-#EXTINF:0 group-title="Новости",EuroNews English
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/en_vidan750_rtp.sdp
-#EXTINF:0 group-title="Новости",EuroNews French
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/fr_vidan750_rtp.sdp
-#EXTINF:0 group-title="Новости",EuroNews German
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/de_vidan750_rtp.sdp
-#EXTINF:0 group-title="Новости",EuroNews Italian
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/it_vidan750_rtp.sdp
-#EXTINF:0 group-title="Новости",EuroNews Portuguese
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/pt_vidan750_rtp.sdp
-#EXTINF:0 group-title="Новости",EuroNews Spanish
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/es_vidan750_rtp.sdp
-#EXTINF:0 group-title="Новости",EuroNews Turkish
-rtsp://ewns-hls-b-stream.hexaglobe.net/rtpeuronewslive/tr_vidan750_rtp.sdp
 #EXTINF:0 group-title="Новости",Deutsche Welle North America
 http://www.metafilegenerator.de/DWelle/tv-northamerica/ios/master.m3u8
 #EXTINF:0 group-title="Новости",Deutsche Welle Arabia
@@ -37,3 +17,4 @@ http://www.metafilegenerator.de/DWelle/tv-arabia/ios/master.m3u8
 http://www.metafilegenerator.de/DWelle/tv-asia/ios/master.m3u8
 #EXTINF:0 group-title="Новости",Deutsche Welle Latinoamerica
 http://www.metafilegenerator.de/DWelle/tv-latinoamerica/ios/master.m3u8
+
