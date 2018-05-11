@@ -10,6 +10,9 @@ SRC_URI_remove = "file://0013-FTPParse.cpp-use-std-string.patch"
 # disable, because systemd is not used
 SRC_URI_remove = "file://0004-handle-SIGTERM.patch"
 
+# добавляю патч обратного портирования для RPI взятого из libreelec
+SRC_URI_append += "file://kodi-krypton-rpb-backports.patch"
+
 
 # специфическии опции для плат Raspberry Pi
 # реализация OPENGL обязательно должна быть --enable-gles
