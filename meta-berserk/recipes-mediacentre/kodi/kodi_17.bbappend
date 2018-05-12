@@ -13,6 +13,9 @@ SRC_URI_remove = "file://0004-handle-SIGTERM.patch"
 # добавляю патч обратного портирования для RPI взятого из libreelec
 SRC_URI_append += "file://kodi-krypton-rpb-backports.patch"
 
+# исправление error adding symbols: DSO missing from command line
+SRC_URI_append += "file://vchostif.patch"
+
 
 # специфическии опции для плат Raspberry Pi
 # реализация OPENGL обязательно должна быть --enable-gles
