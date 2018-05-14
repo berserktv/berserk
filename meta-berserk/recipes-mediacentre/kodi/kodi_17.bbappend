@@ -16,6 +16,9 @@ SRC_URI_append += "file://kodi-krypton-rpb-backports.patch"
 # исправление error adding symbols: DSO missing from command line
 SRC_URI_append += "file://vchostif.patch"
 
+# дополнительные зависимости для kodi plugins (например для Plex)
+RRECOMMENDS_${PN}_append = "python-xml python-misc python-db"
+
 
 # специфическии опции для плат Raspberry Pi
 # реализация OPENGL обязательно должна быть --enable-gles
