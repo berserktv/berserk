@@ -7,7 +7,9 @@ LIC_FILES_CHKSUM = "file://${COREBASE}/meta/files/common-licenses/GPL-2.0;md5=80
 require ../kodi/kodi-dir.inc
 require ../kodi/kodi-version.inc
 
-
+SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Krypton \
+          "
+          
 FULL_OPTIMIZATION_armv7a = "-fexpensive-optimizations -fomit-frame-pointer -O4 -ffast-math"
 BUILD_OPTIMIZATION = "${FULL_OPTIMIZATION}"                  
 
