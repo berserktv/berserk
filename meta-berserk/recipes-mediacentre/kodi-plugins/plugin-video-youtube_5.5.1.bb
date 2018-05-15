@@ -1,5 +1,3 @@
-# Very simple Screensaver for Kodi mediacenter, autor recipe Alexander Demachev (https://berserk.tv)
-
 DESCRIPTION = "Plugin Video Youtube"
 SECTION = "configs"
 PR = "r1"
