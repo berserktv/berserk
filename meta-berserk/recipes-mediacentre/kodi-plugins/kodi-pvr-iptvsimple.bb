@@ -55,6 +55,11 @@ do_configure_prepend() {
     cd ${WORKDIR}/git/tools/depends
     sh bootstrap
     sh configure ${EXTRA_OECONF}
+
+    # исправляю путь в cmake файле ${STAGING_DIR_TARGET}/usr/lib/kodi/KodiConfig.cmake
+    # иначе при сборке addons не будет найден AddonHelpers
+    sed -i "s| /usr/lib/kodi| ${STAGING_DIR_TARGET}/usr/lib/kodi|g" ${WORKDIR}/recipe-sysroot/usr/lib/kodi/KodiConfig.cmake
+    sed -i "s| /usr/include/kodi| ${STAGING_DIR_TARGET}/usr/include/kodi|g" ${WORKDIR}/recipe-sysroot/usr/lib/kodi/KodiConfig.cmake
 }
 
 
