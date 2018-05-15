@@ -77,23 +77,12 @@ BS_WIFI_SUPPORT = " \
         linux-firmware \
         "
 
-#BS_SOFT = "mc \
-#           kodi \
-#           kodi-runner \           
-#           kodi-settings \
-#           kodi-language-ru \
-#           kodi-pvr-iptvsimple \
-#           bs-net \
-#           tv-config \
-#           first-run \
-#           script-berserk-network \
-#           screensaver-kodi-universe \
-#           plugin-video-youtube \
-#           script-module-requests \
-#           "
-
-# off kodi
 BS_SOFT = "mc \
+           kodi \
+           kodi-runner \
+           kodi-settings \
+           kodi-language-ru \
+           kodi-pvr-iptvsimple \
            bs-net \
            tv-config \
            first-run \
