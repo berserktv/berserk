@@ -18,7 +18,7 @@ inherit cmake gettext
 S = "${WORKDIR}/git"
 
 
-DEPENDS = "gettext bcm2835-bootfiles kodi"
+DEPENDS = "gettext bcm2835-bootfiles kodi unzip-native zip-native"
 RDEPENDS_${PN} = "userland"
 
 PACKAGES = "${PN}-dbg ${PN}"
