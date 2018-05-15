@@ -39,13 +39,18 @@ GIT_DIR_BCM2835 = "bcm2835-bootfiles/${VERSION_BCM2835}/${FIRM_DIR}"
 WORK_DIR_BCM2835 = "${BASE_WORKDIR}/${MACHINE}-${DISTRO}-${TARGET_OS}"
 
 EXTRA_OECONF = " \
-    --with-platform=raspberry-pi \
     --host=${HOST_SYS} \
     --build=${BUILD_SYS} \
     --prefix=${STAGING_DIR_TARGET}/usr/lib/kodi \
     --with-toolchain=${STAGING_DIR_TARGET} \
     --with-firmware=${WORK_DIR_BCM2835}/${GIT_DIR_BCM2835} \
     "
+
+# конфигурация для платы RPI
+EXTRA_OECONF_append_raspberrypi = " --with-platform=raspberry-pi"
+# конфигурация для плат RPI2 и RPI3
+EXTRA_OECONF_append_raspberrypi2 = " --with-platform=raspberry-pi2"
+
 
 KODI_GEN_TOOLCHAIN = "${WORKDIR}/git/tools/depends/target/Toolchain.cmake"
 
