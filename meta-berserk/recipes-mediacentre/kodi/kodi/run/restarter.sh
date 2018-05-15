@@ -25,10 +25,10 @@ while /bin/true; do
   fi
   sleep 1
 
-  if [ $rc -eq $KODI_EXIT ]; then poweroff;
-  elif [ $rc -eq $KODI_POWEROFF ]; then poweroff;
-  elif [ $rc -eq $KODI_TIMER ]; then poweroff;
-  elif [ $rc -eq $KODI_REBOOT ]; then reboot;
+  if [ $rc -eq $KODI_EXIT ]; then sync; poweroff;
+  elif [ $rc -eq $KODI_POWEROFF ]; then sync; poweroff;
+  elif [ $rc -eq $KODI_TIMER ]; then sync; poweroff;
+  elif [ $rc -eq $KODI_REBOOT ]; then sync; reboot;
   fi
 
   if [ $rc = $SIGINT ]; then
