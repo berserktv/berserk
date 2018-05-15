@@ -33,8 +33,9 @@ PARALLEL_MAKE = ""
 
 # явно указываю firmware для Raspberry PI см. recipes-bsp/common/firmware.inc
 # bitbake -s | grep "bcm2835-bootfiles" | cut -d":" -f2
-VERSION_BCM2835 = "20160622-r3"
-GIT_DIR_BCM2835 = "bcm2835-bootfiles/${VERSION_BCM2835}/git"
+VERSION_BCM2835 = "20180313-r3"
+FIRM_DIR = "firmware-af994023ab491420598bfd5648b9dcab956f7e11"
+GIT_DIR_BCM2835 = "bcm2835-bootfiles/${VERSION_BCM2835}/${FIRM_DIR}"
 WORK_DIR_BCM2835 = "${BASE_WORKDIR}/${MACHINE}-${DISTRO}-${TARGET_OS}"
 
 EXTRA_OECONF = " \
