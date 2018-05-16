@@ -13,6 +13,14 @@ SRC_URI_append += "file://kodi-krypton-rpb-backports.patch"
 # исправление error adding symbols: DSO missing from command line
 SRC_URI_append += "file://vchostif.patch"
 
+
+MENU_ICON = "addons/skin.estuary/media/icons/settings"
+# добавление нового пункта в меню настроек (значок шестеренки)
+SRC_URI_append += "file://bs-menu.patch file://icon/bs-network.png"
+do_configure_prepend() {
+    install -m 0644 ${WORKDIR}/icon/bs-network.png ${S}/${MENU_ICON}
+}
+
 # дополнительные зависимости для kodi plugins (например для Plex)
 RRECOMMENDS_${PN}_append = "python-xml python-misc python-db"
 

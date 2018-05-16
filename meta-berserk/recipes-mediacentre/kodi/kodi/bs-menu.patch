@@ -1,0 +1,35 @@
+diff -Naur a/addons/skin.estuary/xml/Settings.xml b/addons/skin.estuary/xml/Settings.xml
+--- a/addons/skin.estuary/xml/Settings.xml	2018-02-01 18:17:45.000000000 +0300
++++ b/addons/skin.estuary/xml/Settings.xml	2018-03-08 12:06:50.000000000 +0300
+@@ -134,6 +134,11 @@
+ 					<icon>icons/settings/interface.png</icon>
+ 				</item>
+ 				<item>
++					<label>$LOCALIZE[13279]</label>
++					<onclick>RunAddon(script.berserk.network,butnetwork)</onclick>
++					<icon>icons/settings/bs-network.png</icon>
++				</item>
++				<item>
+ 					<label>$LOCALIZE[20077]</label>
+ 					<onclick>ActivateWindow(SkinSettings)</onclick>
+ 					<icon>icons/settings/skin.png</icon>
+diff -Naur a/system/addon-manifest.xml b/system/addon-manifest.xml
+--- a/system/addon-manifest.xml	2018-03-07 15:58:24.000000000 +0300
++++ b/system/addon-manifest.xml	2018-05-14 14:06:58.000000000 +0300
+@@ -27,6 +27,7 @@
+   <addon>resource.uisounds.kodi</addon>
+   <addon>screensaver.xbmc.builtin.black</addon>
+   <addon>screensaver.xbmc.builtin.dim</addon>
++  <addon>screensaver.kodi.universe</addon>
+   <addon>script.module.pil</addon>
+   <addon>service.xbmc.versioncheck</addon>
+   <addon>skin.estuary</addon>
+@@ -43,4 +44,8 @@
+   <addon>xbmc.python</addon>
+   <addon>xbmc.webinterface</addon>
+   <addon optional="true">peripheral.joystick</addon>
++  <addon>script.berserk.network</addon>
++  <addon>resource.language.ru_ru</addon>
++  <addon>script.module.requests</addon>
++  <addon>plugin.video.youtube</addon>
+ </addons>
