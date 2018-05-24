@@ -21,8 +21,10 @@ do_configure_prepend() {
     install -m 0644 ${WORKDIR}/icon/bs-network.png ${S}/${MENU_ICON}
 }
 
-# дополнительные зависимости для kodi plugins (например для Plex)
-RRECOMMENDS_${PN}_append = "python-xml python-misc python-db"
+# дополнительные зависимости для kodi plugins
+RRECOMMENDS_${PN}_append = "python-xml python-misc python-db \
+                            python-crypt python-threading python-math python-email \
+                            python-io python-netserver python-urllib3 python-datetime"
 
 
 # специфическии опции для плат Raspberry Pi
