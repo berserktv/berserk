@@ -6,10 +6,7 @@ DESCRIPTION = "Simple network shell extension for wlan/ethernet"
 SECTION = "nets"
 PR = "r1"
 LICENSE = "MIT"
-
-LIC_FILES_CHKSUM = "file://${COREBASE}/LICENSE;md5=4d92cd373abda3937c2bc47fbc49d690 \
-                    file://${COREBASE}/meta/COPYING.MIT;md5=3da9cfbcb788c80a0384361b4de20420"
-
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 SRC_URI = "git://github.com/berserktv/bs-net.git;branch=master"
 SRCREV = "2d95807ffd285f66f60eae021baaed645d68fb43"
