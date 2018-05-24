@@ -1,20 +1,22 @@
 #EXTM3U
+#EXTINF:0 group-title="Новости",Euronews Russian
+http://evronovosti.mediacdn.ru/sr1/evronovosti/playlist.m3u8
 #EXTINF:0 group-title="Новости",ABC News English
 http://abclive.abcnews.com/i/abc_live4@136330/master.m3u8?b=500,300,700,900,1200
 #EXTINF:0 group-title="Новости",France 24 English
 http://static.france24.com/live/F24_EN_LO_HLS/live_ios.m3u8
-#EXTINF:0 group-title="Новости",Deutsche Welle German
-http://www.metafilegenerator.de/DWelle/tv/ios/master.m3u8
 #EXTINF:0 group-title="Новости",Tagesschau24
 http://tagesschau-lh.akamaihd.net/i/tagesschau_1@119231/master.m3u8
 #EXTINF:0 group-title="Новости",France 24 French
 http://static.france24.com/live/F24_FR_LO_HLS/live_ios.m3u8
-#EXTINF:0 group-title="Новости",Deutsche Welle North America
-http://www.metafilegenerator.de/DWelle/tv-northamerica/ios/master.m3u8
-#EXTINF:0 group-title="Новости",Deutsche Welle Arabia
-http://www.metafilegenerator.de/DWelle/tv-arabia/ios/master.m3u8
-#EXTINF:0 group-title="Новости",Deutsche Welle Asia
-http://www.metafilegenerator.de/DWelle/tv-asia/ios/master.m3u8
-#EXTINF:0 group-title="Новости",Deutsche Welle Latinoamerica
-http://www.metafilegenerator.de/DWelle/tv-latinoamerica/ios/master.m3u8
+#EXTINF:0 group-title="Новости",Bloomberg
+http://liveproduseast.akamaized.net/btv/desktop/us_live.m3u8
+#EXTINF:0 group-title="Новости",CBN NEWS
+http://bcliveuniv-lh.akamaihd.net:80/i/news_1@194050/index_900_av-p.m3u8
+#EXTINF:0 group-title="Док",Russia Today Док
+http://rtmp.api.rt.com/hls/rtdru.m3u8
+#EXTINF:0 group-title="Новости",Russia Today HD
+http://secure-streams.akamaized.net/rt/index2500.m3u8
+#EXTINF:0 group-title="Новости",CBN
+http://bcliveuniv-lh.akamaihd.net/i/iptv1_1@194050/index_2000_av-b.m3u8
 
