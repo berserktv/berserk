@@ -7,7 +7,9 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425
 require ../kodi/kodi-dir.inc
 require ../kodi/kodi-version.inc
 
+DB_DIR = "${KODI_USERDATA}/Database"
 SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Krypton \
+           file://db/Addons27.db \
           "
           
 FULL_OPTIMIZATION_armv7a = "-fexpensive-optimizations -fomit-frame-pointer -O4 -ffast-math"
@@ -24,7 +26,7 @@ RDEPENDS_${PN} = "userland"
 PACKAGES = "${PN}-dbg ${PN}"
 PROVIDES = "${PACKAGES}"
 
-FILES_${PN} = "/lib /share ${KODI_ADDON_DIR}"
+FILES_${PN} = "/lib /share ${KODI_ADDON_DIR} ${DB_DIR}"
 FILES_${PN}-dbg = "/lib/kodi/addons/${ADDONS_NAME}/.debug"
 
 INSANE_SKIP_${PN} = "dev-so"
@@ -94,6 +96,11 @@ do_compile_append() {
     install -d ${D}/${KODI_ADDON_DIR}
     cp -vfR ${D}/pvr.iptvsimple ${D}/${KODI_ADDON_DIR}
     rm -fr ${D}/pvr.iptvsimple
+
+    # автоматический запуск бинарного плагина pvr.iptvsimple при старте
+    # содержимое базы можно посмотреть в "sqlitebrowser"
+    install -d ${D}/${DB_DIR}
+    install -m 0644 ${WORKDIR}/db/Addons27.db ${D}/${DB_DIR}
 }
 
 # отключаю метод, так как после сборки файлы уже располагаются в CMAKE_INSTALL_PREFIX=${D}
