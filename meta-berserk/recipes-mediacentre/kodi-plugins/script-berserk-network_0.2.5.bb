@@ -10,7 +10,7 @@ LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
 
 SRC_URI = "git://github.com/berserktv/script.berserk.network.git;branch=master"
-SRCREV = "c05defdfc5d72b264777fba53480f42f348b0196"
+SRCREV = "77c1da8e02f7355d274cecd77a65bdff49008074"
 
 require ../kodi/kodi-dir.inc
 KODI_ADDON_NAME = "script.berserk.network"
