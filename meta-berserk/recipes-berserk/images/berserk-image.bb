@@ -102,3 +102,27 @@ IMAGE_INSTALL += " \
     ${BS_SOFT} \
     ${BS_DEBUG_TOOLS} \
     "
+
+
+ROOTFS_POSTPROCESS_COMMAND += "fix_bind_in_image; "
+# временный hack который вручную удаляет зависимость dhcp_client => bind
+# почему то Deb пакет dhcp-client-4.3.6 
+# имеет запись Depends: bind (>=9.10.5-P3)
+# причем это автозависимость, которая явно в RDEPENDS не указана
+# в образе мне bind сервер совсем не нужен, пока удаляю вручную
+fix_bind_in_image() {
+    rm -rf ${IMAGE_ROOTFS}/etc/bind
+    rm -rf ${IMAGE_ROOTFS}/var/cache/bind
+
+    rm -f ${IMAGE_ROOTFS}/usr/bin/bind9-config
+    rm -f ${IMAGE_ROOTFS}/etc/default/bind9
+    rm -f ${IMAGE_ROOTFS}/etc/init.d/bind
+    rm -f ${IMAGE_ROOTFS}/usr/lib/libbind*
+    rm -f ${IMAGE_ROOTFS}/etc/rc0.d/*bind
+    rm -f ${IMAGE_ROOTFS}/etc/rc1.d/*bind
+    rm -f ${IMAGE_ROOTFS}/etc/rc2.d/*bind
+    rm -f ${IMAGE_ROOTFS}/etc/rc3.d/*bind
+    rm -f ${IMAGE_ROOTFS}/etc/rc4.d/*bind
+    rm -f ${IMAGE_ROOTFS}/etc/rc5.d/*bind
+    rm -f ${IMAGE_ROOTFS}/etc/rc6.d/*bind
+}
