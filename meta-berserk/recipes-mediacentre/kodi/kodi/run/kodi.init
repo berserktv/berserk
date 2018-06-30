@@ -36,7 +36,7 @@ case "$1" in
       # :-) ждут котенка "Гава" неприятности -  "а зачем они его ждут"
       reset > /dev/tty1
       echo  > /dev/tty1
-      echo "ver 0.2.4 Torvin" > /dev/tty1
+      echo "ver 0.2.5 Torvin" > /dev/tty1
       setterm --background black --foreground black --cursor off > /dev/tty1
       /etc/init.d/restarter.sh $DAEMON $DAEMON_ARGS > /dev/null 2>&1 &
       ;;
