@@ -41,3 +41,7 @@ BS_RPI3 = " --disable-gl --enable-openmax --enable-player=omxplayer --with-platf
 EXTRA_OECONF_append = "${@bb.utils.contains('MACHINE', 'raspberrypi', '${BS_RPI}', '', d)}"
 EXTRA_OECONF_append = "${@bb.utils.contains('MACHINE', 'raspberrypi2', '${BS_RPI3}', '', d)}"
 EXTRA_OECONF_append = "${@bb.utils.contains('MACHINE', 'raspberrypi3', '${BS_RPI3}', '', d)}"
+
+# опция для появления всплывающего сообщения в Kodi о подключении внешнего носителя
+# например USB или microSDHC диска
+EXTRA_OECONF_append = " --enable-optical-drive"
