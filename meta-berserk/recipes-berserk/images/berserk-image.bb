@@ -7,8 +7,8 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 IMAGE_FEATURES += "ssh-server-dropbear splash"
 
-# немного увеличиваю размер rootfs в кило байтах (100000kB=~100Mb)
-IMAGE_ROOTFS_EXTRA_SPACE_append += "+ 100000"
+# немного увеличиваю размер rootfs в кило байтах (250000kB=~250Mb)
+IMAGE_ROOTFS_EXTRA_SPACE_append += "+ 250000"
 
 
 # BS - BerSerk, version 0.2.5 - "Torvin"
