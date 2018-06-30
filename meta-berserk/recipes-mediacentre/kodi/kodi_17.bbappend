@@ -14,11 +14,16 @@ SRC_URI_append += "file://kodi-krypton-rpb-backports.patch"
 SRC_URI_append += "file://vchostif.patch"
 
 
+DB_DIR = "home/root/.kodi/userdata/Database"
 MENU_ICON = "addons/skin.estuary/media/icons/settings"
 # добавление нового пункта в меню настроек (значок шестеренки)
-SRC_URI_append += "file://bs-menu.patch file://icon/bs-network.png"
+SRC_URI_append += "file://bs-menu.patch file://icon/bs-network.png file://db/Addons27.db"
 do_configure_prepend() {
     install -m 0644 ${WORKDIR}/icon/bs-network.png ${S}/${MENU_ICON}
+    # автоматический запуск бинарного плагина pvr.iptvsimple при старте
+    # содержимое базы можно посмотреть в "sqlitebrowser"
+    install -d ${D}/${DB_DIR}
+    install -m 0644 ${WORKDIR}/db/Addons27.db ${D}/${DB_DIR}
 }
 
 # дополнительные зависимости для kodi plugins
