@@ -7,7 +7,8 @@ DESCRIPTION = "Network Manager is a network management software for Ethernet and
 SECTION = "configs"
 PR = "r1"
 LICENSE = "MIT"
-LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda2f7b4f302"
+MD5_SUM = "md5=0835ade698e0bcf8506ecda2f7b4f302"
+LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;${MD5_SUM}"
 
 SRC_URI = "git://github.com/berserktv/script.berserk.network.git;branch=master"
 SRCREV = "77c1da8e02f7355d274cecd77a65bdff49008074"
