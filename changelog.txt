@@ -1,3 +1,7 @@
+v0.2.6 - 08/07/2018
+- firmware 20180619
+- support for WiFi module CYW43455 (Raspberry Pi 3B Plus)
+
 v0.2.5 - 30/06/2018
 - Linux Kernel 4.9.80
 - Kodi 17.6 (Krypton)

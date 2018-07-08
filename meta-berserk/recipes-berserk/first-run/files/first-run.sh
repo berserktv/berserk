@@ -118,7 +118,7 @@ add_disk_in_fstab() {
 fifo="/mnt/.psplash/psplash_fifo"
 if [ ! -f "$FIRST_RUN" ]; then
     if [ -d "/mnt/.psplash" ]; then
-        echo "MSG  ver 0.2.5 TORVIN     \"Along Came a Hammersmith\"" > $fifo
+        echo "MSG  ver 0.2.6 TORVIN     \"Along Came a Hammersmith\"" > $fifo
     fi
     exit 0
 fi
