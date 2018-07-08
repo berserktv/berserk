@@ -45,8 +45,8 @@ do_install() {
     install -d "${D}${VIDEO_YOUTUBE_SETTINGS}"
     
     # change path show tv-config.bb
-    sed -i "s|${FIND_M3U_PATH}|&${REPLACE_M3U_PATH}|" "${S}/settings/settings-pvr-iptvsimple.xml" 
     install -m 0644 "${S}/settings/settings-pvr-iptvsimple.xml" "${D}${PVR_IPTVSIMPLE_SETTINGS}/settings.xml"
+    sed -i "s|${FIND_M3U_PATH}|&${REPLACE_M3U_PATH}|" "${D}${PVR_IPTVSIMPLE_SETTINGS}/settings.xml"
     install -m 0644 "${S}/settings/settings-video-youtube.xml" "${D}${VIDEO_YOUTUBE_SETTINGS}/settings.xml"
 }
         
