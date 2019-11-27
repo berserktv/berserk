@@ -105,7 +105,7 @@ IMAGE_INSTALL += " \
     "
 
 
-ROOTFS_POSTPROCESS_COMMAND += "fix_bind_in_image; add_radio_guisettings; off_kodi_welcome();"
+ROOTFS_POSTPROCESS_COMMAND += "fix_bind_in_image; add_radio_guisettings; off_kodi_welcome;"
 # временный hack который вручную удаляет зависимость dhcp_client => bind
 # почему то Deb пакет dhcp-client-4.3.6 
 # имеет запись Depends: bind (>=9.10.5-P3)
