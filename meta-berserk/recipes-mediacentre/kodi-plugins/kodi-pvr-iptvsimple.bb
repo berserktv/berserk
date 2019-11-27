@@ -11,6 +11,7 @@ require ../kodi/kodi-version.inc
 DB_DIR = "${KODI_USERDATA}/Database"
 SRC_URI = "git://github.com/xbmc/xbmc.git;branch=Krypton \
            file://db/Addons27.db \
+           file://db/TV29.db \
           "
           
 FULL_OPTIMIZATION_armv7a = "-fexpensive-optimizations -fomit-frame-pointer -O4 -ffast-math"
@@ -102,6 +103,7 @@ do_compile_append() {
     # содержимое базы можно посмотреть в "sqlitebrowser"
     install -d ${D}/${DB_DIR}
     install -m 0644 ${WORKDIR}/db/Addons27.db ${D}/${DB_DIR}
+    install -m 0644 ${WORKDIR}/db/TV29.db ${D}/${DB_DIR}
 }
 
 # отключаю метод, так как после сборки файлы уже располагаются в CMAKE_INSTALL_PREFIX=${D}
