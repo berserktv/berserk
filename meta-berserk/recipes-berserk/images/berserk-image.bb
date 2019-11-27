@@ -105,7 +105,7 @@ IMAGE_INSTALL += " \
     "
 
 
-ROOTFS_POSTPROCESS_COMMAND += "fix_bind_in_image; "
+ROOTFS_POSTPROCESS_COMMAND += "fix_bind_in_image; add_radio_guisettings;"
 # временный hack который вручную удаляет зависимость dhcp_client => bind
 # почему то Deb пакет dhcp-client-4.3.6 
 # имеет запись Depends: bind (>=9.10.5-P3)
@@ -126,4 +126,28 @@ fix_bind_in_image() {
     rm -f ${IMAGE_ROOTFS}/etc/rc4.d/*bind
     rm -f ${IMAGE_ROOTFS}/etc/rc5.d/*bind
     rm -f ${IMAGE_ROOTFS}/etc/rc6.d/*bind
+}
+
+
+
+GUI_SETTINGS = "home/root/.kodi/userdata/guisettings.xml"
+
+# конфигурация запуска последнего выбранного ТВ канала
+F1_LINE = "<startlast default=\"true\">0</startlast>"
+R1_LINE = "<startlast>2</startlast>"
+# конфигурация вывода звука, всегда подключен только аналоговый аудио выход
+F2_LINE = "<audiodevice default=\"true\">PI:HDMI</audiodevice>"
+R2_LINE = "<audiodevice>PI:Analogue</audiodevice>"
+# так как HDMI по умолчанию не используется отключаю автоматическое обновление
+# а то может получиться что питание уехало, а данные остались не записаными
+F3_LINE = "<addonupdates default=\"true\">0</addonupdates>"
+R3_LINE = "<addonupdates>false</addonupdates>"
+
+
+# метод отвечает за добавления конфигурации:
+# которая превращает "Умный телевизор" в "простую Интернет радио колонку"
+add_radio_guisettings() {
+  sed -i "s|${F1_LINE}|${R1_LINE}|" ${IMAGE_ROOTFS}/${GUI_SETTINGS}
+  sed -i "s|${F2_LINE}|${R2_LINE}|" ${IMAGE_ROOTFS}/${GUI_SETTINGS}
+  sed -i "s|${F3_LINE}|${R3_LINE}|" ${IMAGE_ROOTFS}/${GUI_SETTINGS}
 }
