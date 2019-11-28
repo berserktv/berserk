@@ -4,3 +4,16 @@
 <!-- https://kodi.wiki/view/Alternative_keymaps_for_mice -->
 <!-- https://kodi.wiki/view/Action_IDs -->
 <!-- https://kodi.wiki/view/Window_IDs -->
+
+<keymap>
+  <global>
+    <mouse>
+      <wheelup>VolumeUp</wheelup>
+      <wheeldown>VolumeDown</wheeldown>
+      <middleclick>ChannelDown</middleclick>
+      <longclick id="0">ChannelDown</longclick>
+      <longclick id="1">ChannelUp</longclick>
+      <!-- конфигурационный rocket -->
+    </mouse>
+  </global>
+</keymap>
