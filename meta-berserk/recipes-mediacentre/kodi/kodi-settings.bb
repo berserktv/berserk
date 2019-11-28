@@ -18,6 +18,7 @@ VIDEO_YOUTUBE_SETTINGS = "${KODI_USERDATA}/addon_data/plugin.video.youtube"
 
 
 SRC_URI += " \
+    file://settings/keymap.xml \
     file://settings/guisettings.xml \
     file://settings/settings-pvr-iptvsimple.xml \
     file://settings/advancedsettings.xml \
@@ -37,8 +38,10 @@ REPLACE_M3U_PATH = "${TV_CONFIG_DIR}/${TV_CONFIG}"
 do_install() {
     # Kodi guisettings
     install -d "${D}${KODI_USERDATA}"
+    install -d "${D}${KODI_USERDATA}/keymaps"
     install -m 0644 "${S}/settings/guisettings.xml" "${D}${KODI_USERDATA}"
     install -m 0644 "${S}/settings/advancedsettings.xml" "${D}${KODI_USERDATA}"
+    install -m 0644 "${S}/settings/keymap.xml" "${D}${KODI_USERDATA}/keymaps"
     
     # addon pvr.iptvsimple and plugin.video.youtube
     install -d "${D}${PVR_IPTVSIMPLE_SETTINGS}"
