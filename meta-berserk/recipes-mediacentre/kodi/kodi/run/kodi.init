@@ -27,6 +27,15 @@ HOME=/home/root
 # Read configuration variable file if it is present
 [ -r /etc/default/$NAME ] && . /etc/default/$NAME
 
+FIRST_RUN="/tmp/first.bs.run"
+file_run="/tmp/first-radio.sh"
+first_run_rebooter() {
+  echo "#!/bin/sh" > $file_run
+  echo "sleep 50" >> $file_run
+  echo "killall kodi.bin" >> $file_run
+  chmod u+x $file_run
+  rm ${FIRST_RUN}
+}
 
 
 case "$1" in
@@ -39,6 +48,8 @@ case "$1" in
       echo "ver 0.2.6 Torvin" > /dev/tty1
       setterm --background black --foreground black --cursor off > /dev/tty1
       /etc/init.d/restarter.sh $DAEMON $DAEMON_ARGS > /dev/null 2>&1 &
+      # hehe: only for "Radio"
+      if [ -f ${FIRST_RUN} ]; then first_run_rebooter; ${file_run} & fi
       ;;
   stop)
       ;;
