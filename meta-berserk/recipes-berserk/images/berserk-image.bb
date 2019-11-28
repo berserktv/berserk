@@ -155,7 +155,7 @@ add_radio_guisettings() {
 
 FIND_STR = "touch ./tmp/.FIRST_RUN."
 SCRIPT_FIRST_RUN = "etc/init.d/first-run.sh"
-# так как HDMI выход может не использоваться (GUI(ни) не будет), 
+# так как HDMI выход может не использоваться, 
 # то необходимо отключить "cтартовое приветствие"
 off_kodi_welcome() {
     sed -i "s|${FIND_STR}|#&|" ${IMAGE_ROOTFS}/${SCRIPT_FIRST_RUN}
