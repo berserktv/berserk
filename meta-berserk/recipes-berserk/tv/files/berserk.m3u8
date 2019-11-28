@@ -1,29 +1,29 @@
 #EXTM3U
-#EXTINF:-1,106.2FM Европа плюс (320кбт)
-http://net37.ru:8000/europaplus_net37ru.mp3
 #EXTINF:-1,Рекорд (C-Петербург 106.3FM)
 http://air.radiorecord.ru:805/rr_320
+#EXTINF:-1,Русские песни
+http://s2.rusongs.ru/ru-mp3-128
+#EXTINF:-1,Радио Модерн
+https://stm3w.app.goo.gl/i6wp
+#EXTINF:-1,106.2FM Европа плюс
+http://ep256.streamr.ru
+#EXTINF:-1,103.0FM Шансон
+http://chanson.hostingradio.ru:8041/chanson128.mp3
 #EXTINF:-1,88.3FM Ретро FM
 http://retroserver.streamr.ru:8043/retro256.mp3
-#EXTINF:-1,104.7FM Радио 7 на семи холмах
-http://hls-01-radio7.emgsound.ru/13/192/playlist.m3u8
-#EXTINF:-1,106.6FM Love Radio (192Кбт-Златоуст)
-http://variant.fm:8000/LOVE-192
-#EXTINF:-1,92.4FM Дача (Златоуст-192Кбт)
-http://variant.fm:8000/DACHA-192
+#EXTINF:-1,89.1FM Джаз
+http://nashe1.hostingradio.ru/jazz-256
+#EXTINF:-1,90.8FM Релакс FM
+http://ic3.101.ru:8000/v13_1
 #EXTINF:-1,90.3FM Авторадио
 http://ic3.101.ru:8000/v3_1
-#EXTINF:-1,103.0FM Шансон (128кбт)
-http://chanson.hostingradio.ru:8041/chanson128.mp3
+#EXTINF:-1,16Bit FM PRObeat
+http://16bitfm.com:8000/main_mp3_192
+#EXTINF:-1,Русское Радио-Высоцкий
+https://stm3w.app.goo.gl/UBCE
 #EXTINF:-1,97.6FM Вести FM
 http://icecast.vgtrk.cdnvideo.ru/vestifm_mp3_192kbps
 #EXTINF:-1,93.6FM Коммерсант
 http://kommersant77.hostingradio.ru:8016/kommersant128.mp3
 #EXTINF:-1,87.5FM Business FM
 http://bfm.hostingradio.ru:8004/fm
-#EXTINF:-1,89.1FM Джаз
-http://nashe1.hostingradio.ru/jazz-256
-#EXTINF:-1,90.8FM Релакс FM
-http://ic3.101.ru:8000/v13_1
-#EXTINF:-1,Русские песни
-http://s2.rusongs.ru/ru-mp3-128
