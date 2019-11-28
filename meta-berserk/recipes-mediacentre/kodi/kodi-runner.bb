@@ -16,7 +16,7 @@ S = "${WORKDIR}/run"
 
 
 INITSCRIPT_NAME = "kodi"
-INITSCRIPT_PARAMS = "start 01 2 3 4 5 . stop 90 0 1 6 ."
+INITSCRIPT_PARAMS = "start 18 2 3 4 5 . stop 80 0 1 6 ."
 
 
 PACKAGES = "${PN}"
