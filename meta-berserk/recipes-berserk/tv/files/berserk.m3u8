@@ -3,8 +3,6 @@
 http://air.radiorecord.ru:805/rr_320
 #EXTINF:-1,Русские песни
 http://s2.rusongs.ru/ru-mp3-128
-#EXTINF:-1,Радио Модерн
-https://stm3w.app.goo.gl/i6wp
 #EXTINF:-1,106.2FM Европа плюс
 http://ep256.streamr.ru
 #EXTINF:-1,103.0FM Шансон
@@ -19,8 +17,6 @@ http://ic3.101.ru:8000/v13_1
 http://ic3.101.ru:8000/v3_1
 #EXTINF:-1,16Bit FM PRObeat
 http://16bitfm.com:8000/main_mp3_192
-#EXTINF:-1,Русское Радио-Высоцкий
-https://stm3w.app.goo.gl/UBCE
 #EXTINF:-1,97.6FM Вести FM
 http://icecast.vgtrk.cdnvideo.ru/vestifm_mp3_192kbps
 #EXTINF:-1,93.6FM Коммерсант
