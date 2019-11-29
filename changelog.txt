@@ -1,3 +1,7 @@
+v0.2.7 - 29/11/2019
+- add default config for dropbear
+- fix error linker  "undefined reference to  __atomic_fetch_add_8" for  Raspberry Pi 1
+
 v0.2.6 - 08/07/2018
 - firmware 20180619
 - support for WiFi module CYW43455 (Raspberry Pi 3B Plus)
