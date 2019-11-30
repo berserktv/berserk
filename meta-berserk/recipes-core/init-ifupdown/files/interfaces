@@ -9,3 +9,8 @@ auto eth0
 iface eth0 inet manual
     up /etc/network/eth-manual $IFACE up
     down /etc/network/eth-manual $IFACE down
+
+auto wlan0
+iface wlan0 inet manual
+    up /etc/network/wlan $IFACE up
+    down /etc/network/wlan $IFACE down
