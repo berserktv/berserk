@@ -108,6 +108,8 @@ add_disk_in_fstab() {
     local point="$2"
     # example
     #/dev/mmcblk0p     /media/card     auto       defaults,sync,noauto  0  0
+    # fix for Radio Torvin    (more cec messages, more)
+    echo "tmpfs  /home/root/.kodi/temp tmpfs      defaults                           0  0" >> /etc/fstab
     echo "$disk        $point          auto       defaults                           1  1" >> /etc/fstab
     sync
 }
