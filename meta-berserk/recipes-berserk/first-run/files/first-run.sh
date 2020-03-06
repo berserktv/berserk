@@ -103,6 +103,7 @@ mount_create_partition_fat32() {
     return $code
 }
 
+
 add_disk_in_fstab() {
     local disk="$1"
     local point="$2"
@@ -110,6 +111,8 @@ add_disk_in_fstab() {
     #/dev/mmcblk0p     /media/card     auto       defaults,sync,noauto  0  0
     # fix for Radio Torvin    (more cec messages, more)
     echo "tmpfs  /home/root/.kodi/temp tmpfs      defaults                           0  0" >> /etc/fstab
+    mkdir -p     /home/root/.kodi/temp
+    mount tmpfs  /home/root/.kodi/temp -t         tmpfs
     echo "$disk        $point          auto       defaults                           1  1" >> /etc/fstab
     sync
 }
