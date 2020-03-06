@@ -114,7 +114,7 @@ add_fix2_for_radio() {
     echo "if tail -F \$KODI_LOG | grep -q \"\$ACTIVE_EVENT\"; then killall kodi.bin; sync; sleep 5; $name & fi" >> $name
     ################################################################### 
     chmod u+x $name
-    sed -i "s|.*/etc/init.d/restarter.sh.*|&; $name \&|" /etc/init.d/kodi
+    sed -i "s|.*/etc/init.d/restarter.sh.*|&\n      $name \&|" /etc/init.d/kodi
 }
 
 add_disk_in_fstab() {
