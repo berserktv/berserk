@@ -104,6 +104,19 @@ mount_create_partition_fat32() {
 }
 
 
+add_fix2_for_radio() {
+    # fix2 for Radio Torvin (systemd - вернись я все прощу)
+    # Tired of turning the poweroff of the singer, let him sing like that.
+    local name="/etc/init.d/waiterr.sh"
+    echo "#!/bin/sh" > $name
+    echo "KODI_LOG=\"/home/root/.kodi/temp/kodi.log\"" >> $name
+    echo "ACTIVE_EVENT=\"ERROR: Got MSGQ_ABORT or MSGO_IS_ERROR return true\"" >> $name
+    echo "if tail -F \$KODI_LOG | grep -q \"\$ACTIVE_EVENT\"; then killall kodi.bin; sync; sleep 5; $name & fi" >> $name
+    ################################################################### 
+    chmod u+x $name
+    sed -i "s|.*/etc/init.d/restarter.sh.*|&; $name \&|" /etc/init.d/kodi
+}
+
 add_disk_in_fstab() {
     local disk="$1"
     local point="$2"
@@ -114,6 +127,8 @@ add_disk_in_fstab() {
     mkdir -p     /home/root/.kodi/temp
     mount tmpfs  /home/root/.kodi/temp -t         tmpfs
     echo "$disk        $point          auto       defaults                           1  1" >> /etc/fstab
+    # fix2
+    add_fix2_for_radio
     sync
 }
 
